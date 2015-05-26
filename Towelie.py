@@ -1,24 +1,34 @@
 #Towelie - A Stupid Towel Information Bot for Voat.co
 #Made with VAPy Vapp - Voat App Framework
 
-import Vapp, Records
+from random import choice
+
+import Records
+from Vapp import Vapp
 
 class Towelie(Vapp):
 
     def __init__(self):
-        super(Towelie, self).__init__(profile="towelie")
+        super(Towelie, self).__init__()
 
-        self.records = Records.Records()
+        self.records = Records.Records("towelie")
+
+        self.patterns = {"basketball": ["test"]}
+        self.responses = {"test": ["RESPONSE"]}
+
 
     def run(self):
 
-        for subverse in self.subverses:
+        for subverse_name in self.subverses:
 
-            subvrs = self.vapy.get_subverse(subverse)
-            submissions, comments = [i[0] for i in subvrs], [i[1] for i in subvrs]
+            subverse = self.vapy.get_subverse(subverse_name)
+            submissions, comments = [i[0] for i in subverse], [j for i in subverse for j in i[1]]
+            
+            print(len(submissions))
+            input(len(comments))
 
             for sub in submissions:
-
+                self.view_cache.append(self.vapy.get_id(sub))
                 for pattern in self.patterns:
 
                     if (self.vapy.contains_regex_in_title(pattern, sub) or
@@ -29,12 +39,19 @@ class Towelie(Vapp):
                         self.records.log_post(post_id)
 
             for comment in comments:
-
+                self.view_cache.append(self.vapy.get_id(sub))
                 for patten in self.patterns:
 
                     if self.vapy.contains_regex_in_content(pattern, comment):
                         response_type = choice(self.patterns[pattern])
                         com_id = self.vapy.get_id(comment)
-                        post_id = self.vapy.post_reply_to_comment(com_id, choice(self.response[response_type]))
+                        post_id = self.vapy.post_reply_to_comment(com_id, choice(self.responses[response_type]))
                         self.records.log_post(post_id)
 
+
+def main():
+    tbot = Towelie()
+    tbot.run()
+
+if __name__ == '__main__':
+    main()
