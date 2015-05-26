@@ -1,0 +1,9 @@
+{
+    "app_name": "towelie",
+    "profile": "towelie",
+    "subverses": ["frame11"],
+    "nsfw": "False",
+    "adult_app": "False",
+    "patterns": "patterns.json",
+    "responses": "responses.json"
+}

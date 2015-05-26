@@ -1,0 +1,25 @@
+{
+    "baseball": [
+        "If you're gonna play baseball, you're gonna get all sweaty. That's why Towlie says, \"If you're gonna play baseball, don't forget to bring a towel!\"",
+        "If you're gonna play baseball, you're probably gonna get all sweaty, so don't forget to being a towel!"         
+    ],
+    "basketball": [
+        "If you're gonna play basketball, you're gonna get all sweaty. That's why Towlie says, \"If you're gonna play basketball, don't forget to bring a towel!\"",
+        "If you're gonna play basketball, you're probably gonna get all sweaty, so don't forget to being a towel!"         
+    ],
+    "football": [
+        "If you're gonna play football, you're gonna get all sweaty. That's why Towlie says, \"If you're gonna play football, don't forget to bring a towel!\"",
+        "If you're gonna play football, you're probably gonna get all sweaty, so don't forget to being a towel!"         
+    ],
+    "general": [
+        "Don't forget to being a towel!"
+    ],
+    "soccer": [
+        "If you're gonna play soccer, you're gonna get all sweaty. That's why Towlie says, \"If you're gonna play baseball, don't forget to bring a towel!\"",
+        "If you're gonna play soccer, you're probably gonna get all sweaty, so don't forget to being a towel!"         
+    ],
+    "swim": [
+        "If you're gonna go swimming, you're gonna need a towel. That's why Towelie always says, \"If you're gonna go swimming, don't forget to bring a towel!\"",
+        "When you go for a swim, you're gonna get wet, so don't forget to bring a towel!"
+    ]
+}

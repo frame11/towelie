@@ -1,0 +1,7 @@
+{
+    "go( for a)? swim": ["swim", "general"],
+    "play baseball": ["baseball", "sports", "general"],
+    "play basketball": ["basketball", "sports", "general"],
+    "play football": ["football", "sports", "general"],
+    "play soccer": ["soccer", "sports", "general"]
+}

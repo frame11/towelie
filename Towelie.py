@@ -13,19 +13,19 @@ class Towelie(Vapp):
 
         self.records = Records.Records("towelie")
 
-        self.patterns = {"basketball": ["test"]}
-        self.responses = {"test": ["RESPONSE"]}
-
 
     def run(self):
+        
+        #print(self.patterns)
+        #print(self.responses)
 
         for subverse_name in self.subverses:
 
             subverse = self.vapy.get_subverse(subverse_name)
             submissions, comments = [i[0] for i in subverse], [j for i in subverse for j in i[1]]
             
-            print(len(submissions))
-            input(len(comments))
+            #print(len(submissions))
+            #input(len(comments))
 
             for sub in submissions:
                 self.view_cache.append(self.vapy.get_id(sub))
@@ -40,8 +40,8 @@ class Towelie(Vapp):
 
             for comment in comments:
                 self.view_cache.append(self.vapy.get_id(sub))
-                for patten in self.patterns:
-
+                for pattern in self.patterns:
+                    
                     if self.vapy.contains_regex_in_content(pattern, comment):
                         response_type = choice(self.patterns[pattern])
                         com_id = self.vapy.get_id(comment)
